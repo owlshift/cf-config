@@ -16,6 +16,11 @@ proxies:
     headers:
       Host: geek-clinic-cigarettes-study.trycloudflare.com
   client-fingerprint: chrome
+  smux:
+    enabled: true
+    protocol: h2mux
+    max-connections: 4
+    padding: false
 proxy-groups:
 - name: 选择
   type: select
