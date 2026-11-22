@@ -1,0 +1,31 @@
+mixed-port: 7890
+mode: rule
+log-level: info
+proxies:
+- name: CF隧道
+  type: vless
+  server: geek-clinic-cigarettes-study.trycloudflare.com
+  port: 443
+  uuid: dc4d999b-2c0f-4a35-83dc-dc3376a364d0
+  udp: true
+  tls: true
+  servername: geek-clinic-cigarettes-study.trycloudflare.com
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: geek-clinic-cigarettes-study.trycloudflare.com
+  client-fingerprint: chrome
+  smux:
+    enabled: true
+    protocol: h2mux
+    max-connections: 4
+    padding: false
+proxy-groups:
+- name: 选择
+  type: select
+  proxies:
+  - CF隧道
+  - DIRECT
+rules:
+- MATCH,选择
