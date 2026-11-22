@@ -21,7 +21,7 @@ a{word-break:break-all}
 <p class="muted">扫码导入，或复制下面的链接粘到客户端</p>
 
 <section>
-<h2>1. 扫码导入单个节点</h2>
+<h2>1. 扫码导入单个节点（不含多路复用，建议用下面订阅）</h2>
 <img src="node.png" alt="节点二维码">
 <code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@geek-clinic-cigarettes-study.trycloudflare.com:443?encryption=none&amp;security=tls&amp;sni=geek-clinic-cigarettes-study.trycloudflare.com&amp;type=ws&amp;host=geek-clinic-cigarettes-study.trycloudflare.com&amp;path=%2Fws&amp;fp=chrome#CF隧道</code>
 </section>
@@ -29,9 +29,9 @@ a{word-break:break-all}
 <section>
 <h2>2. 扫码或复制订阅地址（推荐）</h2>
 <img src="sub.png" alt="订阅二维码">
+<code>https://owlshift.github.io/cf-config/cf-tunnel.yaml</code>
+<p class="muted">备用镜像（可能拿到旧缓存）：</p>
 <code>https://ghproxy.net/https://raw.githubusercontent.com/owlshift/cf-config/master/cf-tunnel.yaml</code>
-<p class="muted">备用镜像：</p>
-<code>https://ghfast.top/https://raw.githubusercontent.com/owlshift/cf-config/master/cf-tunnel.yaml</code>
 </section>
 
 <section>
@@ -39,7 +39,7 @@ a{word-break:break-all}
 <ul>
 <li>订阅地址会跟着节点一起更新，地址变了点“更新订阅”即可，不用重导。</li>
 <li>只支持 IPv4，走 Cloudflare 隧道，出口在美国。</li>
-<li>速度上限约 2.5 Mbps，刷网页、720p 够用，4K 不行。</li>
+<li>已开启多路复用（smux），首次请求慢、之后约 0.5s；实测下行 6–8 Mbps。</li>
 </ul>
 </section>
 </body>
