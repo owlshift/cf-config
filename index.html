@@ -1,46 +1,25 @@
 <!doctype html>
-<html lang="zh">
-<head>
-<meta charset="utf-8">
+<html lang="zh"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CF 隧道节点</title>
-<style>
-:root{color-scheme:light dark}
-body{font:16px/1.6 -apple-system,system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px}
-h1{font-size:20px;margin:0 0 4px}
-p.muted{opacity:.6;margin-top:0}
-section{border:1px solid #8884;border-radius:12px;padding:16px;margin:20px 0}
-h2{font-size:16px;margin:0 0 12px}
+<title>CF 隧道节点</title><style>
+:root{color-scheme:light dark}body{font:16px/1.6 -apple-system,system-ui,sans-serif;max-width:640px;margin:0 auto;padding:24px}
+h1{font-size:20px;margin:0 0 4px}p.muted{opacity:.6;margin-top:0}
+section{border:1px solid #8884;border-radius:12px;padding:16px;margin:20px 0}h2{font-size:16px;margin:0 0 12px}
 img{display:block;width:100%;max-width:280px;margin:0 auto;background:#fff;padding:8px;border-radius:8px}
 code{display:block;word-break:break-all;font-size:12px;background:#8881;padding:10px;border-radius:8px;margin-top:12px}
-a{word-break:break-all}
-</style>
-</head>
-<body>
-<h1>CF 隧道节点</h1>
-<p class="muted">扫码导入，或复制下面的链接粘到客户端</p>
-
-<section>
-<h2>1. 扫码导入单个节点（不含多路复用，建议用下面订阅）</h2>
-<img src="node.png" alt="节点二维码">
-<code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@geek-clinic-cigarettes-study.trycloudflare.com:443?encryption=none&amp;security=tls&amp;sni=geek-clinic-cigarettes-study.trycloudflare.com&amp;type=ws&amp;host=geek-clinic-cigarettes-study.trycloudflare.com&amp;path=%2Fws&amp;fp=chrome#CF隧道</code>
-</section>
-
-<section>
-<h2>2. 扫码或复制订阅地址（推荐）</h2>
+</style></head><body>
+<h1>CF 隧道节点</h1><p class="muted">扫码导入，或复制链接粘到客户端。推荐用订阅。</p>
+<section><h2>1. 订阅（推荐：多路复用 + 双线自动切换）</h2>
 <img src="sub.png" alt="订阅二维码">
 <code>https://owlshift.github.io/cf-config/cf-tunnel.yaml</code>
 <p class="muted">备用镜像（可能拿到旧缓存）：</p>
-<code>https://ghproxy.net/https://raw.githubusercontent.com/owlshift/cf-config/master/cf-tunnel.yaml</code>
-</section>
-
-<section>
-<h2>说明</h2>
-<ul>
-<li>订阅地址会跟着节点一起更新，地址变了点“更新订阅”即可，不用重导。</li>
-<li>只支持 IPv4，走 Cloudflare 隧道，出口在美国。</li>
-<li>已开启多路复用（smux），首次请求慢、之后约 0.5s；实测下行 6–8 Mbps。</li>
-</ul>
-</section>
-</body>
-</html>
+<code>https://ghproxy.net/https://raw.githubusercontent.com/owlshift/cf-config/master/cf-tunnel.yaml</code></section>
+<section><h2>2. 单节点扫码（不含多路复用，仅应急）</h2>
+<img src="node.png" alt="节点1二维码"><code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@geek-clinic-cigarettes-study.trycloudflare.com:443?encryption=none&security=tls&sni=geek-clinic-cigarettes-study.trycloudflare.com&type=ws&host=geek-clinic-cigarettes-study.trycloudflare.com&path=%2Fws%3Fed%3D2048&fp=chrome&ed=2048#CF%E9%9A%A7%E9%81%931</code>
+<img src="node2.png" alt="节点2二维码" style="margin-top:16px"><code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@devel-conversation-auburn-coordinates.trycloudflare.com:443?encryption=none&security=tls&sni=devel-conversation-auburn-coordinates.trycloudflare.com&type=ws&host=devel-conversation-auburn-coordinates.trycloudflare.com&path=%2Fws%3Fed%3D2048&fp=chrome&ed=2048#CF%E9%9A%A7%E9%81%932</code></section>
+<section><h2>说明</h2><ul>
+<li>两条独立隧道，客户端 fallback 自动切换，一条挂另一条顶上。</li>
+<li>订阅地址随节点更新，改了之后点“更新订阅”即可，不用重导。</li>
+<li>已开 smux 多路复用：首个请求慢，之后约 0.5s；下行实测 0.5–0.8 MB/s。</li>
+<li>仅 IPv4，出口美国西岸，跨太平洋 RTT 是延迟下限。</li>
+</ul></section></body></html>
