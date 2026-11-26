@@ -19,32 +19,32 @@ sniffer:
 proxies:
 - name: CF隧道1
   type: vless
-  server: geek-clinic-cigarettes-study.trycloudflare.com
+  server: again-expansys-fixtures-incomplete.trycloudflare.com
   port: 443
   uuid: dc4d999b-2c0f-4a35-83dc-dc3376a364d0
   udp: false
   tls: true
-  servername: geek-clinic-cigarettes-study.trycloudflare.com
+  servername: again-expansys-fixtures-incomplete.trycloudflare.com
   network: ws
   ws-opts:
     path: "/ws?ed=2048"
-    headers: {Host: geek-clinic-cigarettes-study.trycloudflare.com}
+    headers: {Host: again-expansys-fixtures-incomplete.trycloudflare.com}
     max-early-data: 2048
     early-data-header-name: Sec-WebSocket-Protocol
   client-fingerprint: chrome
   smux: {enabled: true, protocol: h2mux, max-connections: 4, padding: false}
 - name: CF隧道2
   type: vless
-  server: devel-conversation-auburn-coordinates.trycloudflare.com
+  server: const-peaceful-postage-phenomenon.trycloudflare.com
   port: 443
   uuid: dc4d999b-2c0f-4a35-83dc-dc3376a364d0
   udp: false
   tls: true
-  servername: devel-conversation-auburn-coordinates.trycloudflare.com
+  servername: const-peaceful-postage-phenomenon.trycloudflare.com
   network: ws
   ws-opts:
     path: "/ws?ed=2048"
-    headers: {Host: devel-conversation-auburn-coordinates.trycloudflare.com}
+    headers: {Host: const-peaceful-postage-phenomenon.trycloudflare.com}
     max-early-data: 2048
     early-data-header-name: Sec-WebSocket-Protocol
   client-fingerprint: chrome
