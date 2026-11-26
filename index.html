@@ -8,18 +8,14 @@ section{border:1px solid #8884;border-radius:12px;padding:16px;margin:20px 0}h2{
 img{display:block;width:100%;max-width:280px;margin:0 auto;background:#fff;padding:8px;border-radius:8px}
 code{display:block;word-break:break-all;font-size:12px;background:#8881;padding:10px;border-radius:8px;margin-top:12px}
 </style></head><body>
-<h1>CF 隧道节点</h1><p class="muted">扫码导入，或复制链接粘到客户端。推荐用订阅。</p>
-<section><h2>1. 订阅（推荐：多路复用 + 双线自动切换）</h2>
-<img src="sub.png" alt="订阅二维码">
-<code>https://owlshift.github.io/cf-config/cf-tunnel.yaml</code>
-<p class="muted">备用镜像（可能拿到旧缓存）：</p>
-<code>https://ghproxy.net/https://raw.githubusercontent.com/owlshift/cf-config/master/cf-tunnel.yaml</code></section>
-<section><h2>2. 单节点扫码（不含多路复用，仅应急）</h2>
-<img src="node.png" alt="节点1二维码"><code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@geek-clinic-cigarettes-study.trycloudflare.com:443?encryption=none&security=tls&sni=geek-clinic-cigarettes-study.trycloudflare.com&type=ws&host=geek-clinic-cigarettes-study.trycloudflare.com&path=%2Fws%3Fed%3D2048&fp=chrome&ed=2048#CF%E9%9A%A7%E9%81%931</code>
-<img src="node2.png" alt="节点2二维码" style="margin-top:16px"><code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@devel-conversation-auburn-coordinates.trycloudflare.com:443?encryption=none&security=tls&sni=devel-conversation-auburn-coordinates.trycloudflare.com&type=ws&host=devel-conversation-auburn-coordinates.trycloudflare.com&path=%2Fws%3Fed%3D2048&fp=chrome&ed=2048#CF%E9%9A%A7%E9%81%932</code></section>
+<h1>CF 隧道节点</h1><p class="muted">扫码导入，或用订阅。订阅地址固定，节点变了点“更新订阅”。</p>
+<section><h2>1. 订阅（推荐）</h2><img src="sub.png" alt="订阅二维码">
+<code>https://owlshift.github.io/cf-config/cf-tunnel.yaml</code></section>
+<section><h2>2. 单节点扫码（应急）</h2>
+<img src="node.png" alt="节点1"><code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@again-expansys-fixtures-incomplete.trycloudflare.com:443?encryption=none&security=tls&sni=again-expansys-fixtures-incomplete.trycloudflare.com&type=ws&host=again-expansys-fixtures-incomplete.trycloudflare.com&path=%2Fws%3Fed%3D2048&fp=chrome&ed=2048#CF%E9%9A%A7%E9%81%931</code>
+<img src="node2.png" alt="节点2" style="margin-top:16px"><code>vless://dc4d999b-2c0f-4a35-83dc-dc3376a364d0@const-peaceful-postage-phenomenon.trycloudflare.com:443?encryption=none&security=tls&sni=const-peaceful-postage-phenomenon.trycloudflare.com&type=ws&host=const-peaceful-postage-phenomenon.trycloudflare.com&path=%2Fws%3Fed%3D2048&fp=chrome&ed=2048#CF%E9%9A%A7%E9%81%932</code></section>
 <section><h2>说明</h2><ul>
-<li>两条独立隧道，客户端 fallback 自动切换，一条挂另一条顶上。</li>
-<li>订阅地址随节点更新，改了之后点“更新订阅”即可，不用重导。</li>
-<li>已开 smux 多路复用：首个请求慢，之后约 0.5s；下行实测 0.5–0.8 MB/s。</li>
-<li>仅 IPv4，出口美国西岸，跨太平洋 RTT 是延迟下限。</li>
+<li>两条独立隧道，fallback 自动切换。</li>
+<li>订阅地址固定；隧道重启换域名时，本页与订阅会自动更新。</li>
+<li>已开 smux：首个请求稍慢，之后约 0.5s。</li>
 </ul></section></body></html>
